@@ -1,15 +1,10 @@
-  Feature: Login functionality
-  
-  
-  @regression @negative
-  Scenario Outline: Login with multiple invalid data sets
-    Given User is on the Login page
-    When User enters <username> and <password>
-    And clicks on the Login button
-    Then An error message should be displayed
+Feature: Amazon Login
 
-    Examples:
-      | username   | password  |
-      | wrongUser  | pass123   |
-      | testUser   | wrongPass |
-      | admin123   | admin123  |
+
+  @search
+  Scenario: Search mobiles in Amazon
+    Given I am on the Amazon homepage
+    When I search for "Mobiles"
+    And I click on the search button
+    Then I should see a list of mobile phones displayed
+   
